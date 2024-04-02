@@ -9,7 +9,7 @@ function HomeTemplate() {
 }
 
 const Container = styled.div`
-    
+    height: 100vh;
 `
 
 export default HomeTemplate;

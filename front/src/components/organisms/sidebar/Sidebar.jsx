@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 function Sidebar() {
     return(
-        <span></span>
+        <span>Sidebar</span>
     )
 }
 
