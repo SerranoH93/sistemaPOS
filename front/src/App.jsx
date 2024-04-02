@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled, {ThemeProvider} from 'styled-components';
 import MyRoutes from './routes/routes';
 import Sidebar from './components/organisms/sidebar/Sidebar';
@@ -8,13 +9,16 @@ import { useThemeStore } from './store/ThemeStore';
 
 
 function App() {
+    const [sidebarOpen, setSidebarOpen] = useState(false); //Estado de la barra lateral
     const {themeStyle} = useThemeStore();
+
+
     return (
         <ThemeProvider theme={themeStyle}>
             <Container>
                 <GlobalStyles />
                 <section className='contentSideBar'>
-                    <Sidebar />
+                    <Sidebar state={sidebarOpen} setState={() => setSidebarOpen(!sidebarOpen)}/>
                 </section>
                 <section className='contentMenuHambur'>menu hambur</section>
                 <section className='contentRouters'>
