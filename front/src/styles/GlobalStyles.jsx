@@ -4,9 +4,8 @@ export const GlobalStyles = createGlobalStyle`
         margin:0;
         padding:0;
         box-sizing:border-box;
-        background-color: #000000;
-        font-family:"Poppins",sans-serif;
-        color:#ffffff;
+        background-color: ${({theme}) => theme.bgtotal};
+        font-family:"Poppins",sans-serif;        
     }
 `
 

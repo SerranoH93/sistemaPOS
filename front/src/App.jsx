@@ -15,7 +15,7 @@ function App() {
 
     return (
         <ThemeProvider theme={themeStyle}>
-            <Container>
+            <Container className={sidebarOpen? 'active' : ''}>
                 <GlobalStyles />
                 <section className='contentSideBar'>
                     <Sidebar state={sidebarOpen} setState={() => setSidebarOpen(!sidebarOpen)}/>
@@ -30,24 +30,24 @@ function App() {
 }
 const Container = styled.main`
     display: grid;
-    grid-template-columns: 1fr;
-    background-color: black;
+    grid-template-columns: 1fr;   
+    transition: 0.1s ease-in-out; 
+    color:${({theme}) => theme.text};
     .contentSideBar {
         display: none;
-        background-color: rgba(78,45,78,0.5);
-
     }
     .contentMenuHambur {
-        position: absolute;
-        background-color: rgba(78,45,78,0.5);
+        position: absolute;        
     }
     .contentRouters {
         grid-template-columns: 1;
-        width: 100%;
-        background-color: rgba(47, 41, 110, 0.5);
+        width: 100%;        
     }
     @media ${Device.tablet} {
         grid-template-columns: 88px 1fr;
+        &.active {
+            grid-template-columns: 260px 1fr;
+        }
         .contentSideBar{
             display: initial;
         }
