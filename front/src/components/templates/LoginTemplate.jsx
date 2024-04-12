@@ -5,6 +5,7 @@ import { Btnsave } from '../molecules/Btnsave';
 import { Line } from '../atoms/Line';
 import { v } from '../../styles/variables';
 import { Device } from '../../styles/breakpoints';
+import { Footer } from '../organisms/Footer';
 
 function LoginTemplate() {
     return (
@@ -25,6 +26,7 @@ function LoginTemplate() {
                 </Line>
                 <Btnsave title='Google' bgcolor='#ffffff' icon={<v.iconogoogle />} />
             </div>
+            <Footer/>
         </Container>
     )
 }
@@ -34,7 +36,8 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;  
+    text-align: center; 
+    flex-direction: column; 
     .card{
         display: flex;
         flex-direction: column;
