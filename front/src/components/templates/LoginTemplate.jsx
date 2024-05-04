@@ -11,6 +11,10 @@ function LoginTemplate() {
     return (
         <Container>
             <div className='card'>
+                <ContentLogo>
+                    <img src={v.logo} alt="" />
+                    <span>ada369 3.0</span>
+                </ContentLogo>
                 <Title $paddingbottom='20px' >Ingresar</Title>
                 <form>
                     <InputText2>
@@ -38,6 +42,9 @@ const Container = styled.div`
     align-items: center;
     text-align: center; 
     flex-direction: column; 
+    padding: 0 20px;
+    color:${({theme}) => theme.text};
+    
     .card{
         display: flex;
         flex-direction: column;
@@ -48,7 +55,19 @@ const Container = styled.div`
         @media ${Device.tablet} {
             width: 400px;
         }
+    }    
+`
+const ContentLogo = styled.section`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+
+    span {
+        font-weight: 700;
     }
-    
+    img {
+        width: 10%;
+    }
 `
 export default LoginTemplate;

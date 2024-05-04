@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import styled, {ThemeProvider} from 'styled-components';
 import MyRoutes from './routes/routes';
 import Sidebar from './components/organisms/sidebar/Sidebar';
+import Login from './views/Login';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { Device } from './styles/breakpoints';
 import { useThemeStore } from './store/ThemeStore';
@@ -11,20 +13,21 @@ import { useThemeStore } from './store/ThemeStore';
 function App() {
     const [sidebarOpen, setSidebarOpen] = useState(false); //Estado de la barra lateral
     const {themeStyle} = useThemeStore();
+    const {pathname} = useLocation();
 
 
     return (
         <ThemeProvider theme={themeStyle}>
-            <Container className={sidebarOpen? 'active' : ''}>
-                <GlobalStyles />
-                <section className='contentSideBar'>
-                    <Sidebar state={sidebarOpen} setState={() => setSidebarOpen(!sidebarOpen)}/>
-                </section>
-                <section className='contentMenuHambur'>menu hambur</section>
-                <section className='contentRouters'>
-                    <MyRoutes />
-                </section>
-            </Container>
+            <GlobalStyles />
+                {pathname != '/login' ? (<Container className={sidebarOpen ? 'active' : ''}>
+                    <section className='contentSideBar'>
+                        <Sidebar state={sidebarOpen} setState={() => setSidebarOpen(!sidebarOpen)} />
+                    </section>
+                    <section className='contentMenuHambur'>Menu Hambur</section>
+                    <section className='contentRouters'>
+                        <MyRoutes />
+                    </section>
+                </Container>) : (<Login />)}
         </ThemeProvider>
     )
 }
