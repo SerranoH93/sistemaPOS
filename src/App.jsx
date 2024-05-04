@@ -7,6 +7,7 @@ import Login from './views/Login';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { Device } from './styles/breakpoints';
 import { useThemeStore } from './store/ThemeStore';
+import { AuthContextProvider } from './context/AuthContext';
 
 
 
@@ -18,7 +19,8 @@ function App() {
 
     return (
         <ThemeProvider theme={themeStyle}>
-            <GlobalStyles />
+            <AuthContextProvider>
+                <GlobalStyles />
                 {pathname != '/login' ? (<Container className={sidebarOpen ? 'active' : ''}>
                     <section className='contentSideBar'>
                         <Sidebar state={sidebarOpen} setState={() => setSidebarOpen(!sidebarOpen)} />
@@ -28,6 +30,7 @@ function App() {
                         <MyRoutes />
                     </section>
                 </Container>) : (<Login />)}
+            </AuthContextProvider>            
         </ThemeProvider>
     )
 }

@@ -6,8 +6,11 @@ import { Line } from '../atoms/Line';
 import { v } from '../../styles/variables';
 import { Device } from '../../styles/breakpoints';
 import { Footer } from '../organisms/Footer';
+import { useAuthStore } from '../../store/AuthStore';
 
 function LoginTemplate() {
+    const {loginGoogle} = useAuthStore();
+
     return (
         <Container>
             <div className='card'>
@@ -28,7 +31,7 @@ function LoginTemplate() {
                 <Line>
                     <span>O</span>
                 </Line>
-                <Btnsave title='Google' bgcolor='#ffffff' icon={<v.iconogoogle />} />
+                <Btnsave funcion={loginGoogle} title='Google' bgcolor='#ffffff' icon={<v.iconogoogle />} />
             </div>
             <Footer/>
         </Container>
