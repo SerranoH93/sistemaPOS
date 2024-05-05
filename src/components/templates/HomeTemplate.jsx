@@ -3,13 +3,13 @@ import { useAuthStore } from '../../store/AuthStore';
 import { UserAuth } from '../../context/AuthContext';
 
 function HomeTemplate() {
-    const { logout } =useAuthStore();
+    const { logOut } =useAuthStore();
     const { user} = UserAuth(); //Se puede usar para mostrar datos de session
 
     return(
         <Container>
             <span>HomeTemplate</span>
-            <button onClick={logout}>Cerrar Sesión</button>
+            <button onClick={logOut}>Cerrar Sesión</button>
         </Container>
     )
 }

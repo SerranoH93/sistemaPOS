@@ -7,7 +7,8 @@ export const useAuthStore = create((set) => ({
             provider: 'google'
         })
     },
-    logout: async () => {
+    logOut: async () => {
         await supabase.auth.signOut();
     }
 }))
+

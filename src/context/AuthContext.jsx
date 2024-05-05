@@ -8,11 +8,13 @@ export const AuthContextProvider = ({children}) => {
 
     //useEffect para escuchar los cambios de session
     useEffect(() => {
-        const { data } = supabase.auth.onAuthStateChange(async(session) => {
-            if(session?.user == null) {
+        const { data } = supabase.auth.onAuthStateChange(async(event, session) => {
+            if(session == null) {
                 setUser(null)
+                
             } else {
-                setUser(session?.user)
+                setUser(session)
+                
             }
             
         });
@@ -29,5 +31,5 @@ export const AuthContextProvider = ({children}) => {
 };
 
 export const UserAuth = () => {
-    return useContext(AuthContext)
+    return useContext(AuthContext);
 }
