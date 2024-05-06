@@ -16,7 +16,6 @@ function App() {
     const {themeStyle} = useThemeStore();
     const {pathname} = useLocation();
 
-
     return (
         <ThemeProvider theme={themeStyle}>
             <AuthContextProvider>
