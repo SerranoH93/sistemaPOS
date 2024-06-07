@@ -1,10 +1,7 @@
-import styled from "styled-components";
+import { ConfigurationsTemplate } from "../components/templates/ConfigurationsTemplate";
 
 export function Configurations() {
-    return (<Container>
-        <h1>Componente</h1>
-    </Container>);
+    return (
+        <ConfigurationsTemplate/>
+    );
 }
-const Container = styled.div`
- 
-`
