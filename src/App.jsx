@@ -8,6 +8,7 @@ import { GlobalStyles } from './styles/GlobalStyles';
 import { Device } from './styles/breakpoints';
 import { useThemeStore } from './store/ThemeStore';
 import { AuthContextProvider } from './context/AuthContext';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 
 
@@ -29,6 +30,7 @@ function App() {
                         <MyRoutes />
                     </section>
                 </Container>) : (<Login />)}
+                <ReactQueryDevtools initialIsOpen={true} />
             </AuthContextProvider>            
         </ThemeProvider>
     )
