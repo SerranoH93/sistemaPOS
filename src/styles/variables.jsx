@@ -44,9 +44,11 @@ import { BsEmojiDizzy } from "react-icons/bs";
 import { FcImageFile } from "react-icons/fc";
 import { IoIosArrowBack } from "react-icons/io";
 import { GrAdd } from "react-icons/gr";
+import { FaSearch } from "react-icons/fa";
 
 
 export const v = {
+    iconobuscar: FaSearch,
     iconoagregar: GrAdd,
     iconoimagenvacia: FcImageFile,
     iconoemijivacio: BsEmojiDizzy,
@@ -87,7 +89,7 @@ export const v = {
     bpbart: `48em`,
     bpmarge: `62em`,
     bphomer: `75em`,
-    colorPrincipal: `#00F34A`,
+    colorPrincipal: `#F3D20C`,
     boxshadowGray: `0px 10px 15px -3px rgba(0,0,0,0.1)`,
     iconoFlechabajo: IoIosArrowDown,
     iconocorona: RiVipCrownFill,

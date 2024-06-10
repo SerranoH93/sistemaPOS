@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Title } from '../atoms/Title';
 import { InputText2 } from '../organisms/forms/InputText2';
-import { Btnsave } from '../molecules/Btnsave';
+import { Btn1 } from '../molecules/Btn1';
 import { Line } from '../atoms/Line';
 import { v } from '../../styles/variables';
 import { Device } from '../../styles/breakpoints';
@@ -26,12 +26,12 @@ function LoginTemplate() {
                     <InputText2>
                         <input className='form__field' placeholder='Ingresa tu contraseña' type='password' />
                     </InputText2>
-                    <Btnsave title='Ingresar' bgcolor='#1CB0F6' color='255,255,255' width='100%' />
+                    <Btn1 title='Ingresar' bgcolor='#1CB0F6' color='255,255,255' width='100%' />
                 </form>
                 <Line>
                     <span>O</span>
                 </Line>
-                <Btnsave funcion={loginGoogle} title='Google' bgcolor='#ffffff' icon={<v.iconogoogle />} />
+                <Btn1 funcion={loginGoogle} title='Google' bgcolor='#ffffff' icon={<v.iconogoogle />} />
             </div>
             <Footer/>
         </Container>
