@@ -1,12 +1,19 @@
 import styled from "styled-components";
 import { v } from "../../styles/variables";
 
-export function SearchBar() {
+export function SearchBar({ setBuscador }) {
+    function buscar(e) {
+        setBuscador(e.target.value)
+    }
+
     return (
         <Container>
             <section className="content">
                 <v.iconobuscar className="icono"/>
-                <input placeholder="Buscar..." type="text" />
+                <input 
+                    placeholder="Buscar..." 
+                    type="text" 
+                    onChange={buscar}/>
             </section>
         </Container>
     );
