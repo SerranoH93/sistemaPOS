@@ -29,6 +29,7 @@ export function ConfigurationsTemplate() {
             };
         }
     }, []);
+    
     return (
         <Container>
             <div id="cards">
