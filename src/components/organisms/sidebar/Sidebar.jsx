@@ -68,10 +68,7 @@ function Sidebar({ state, setState }) {
                             <span className={state ? "label_ver" : "label_oculto"}>MÁS</span>
                         </section>
                     </div>
-
-
                 </div>
-
                 <ToggleTheme />
             </Container>
         </Main>

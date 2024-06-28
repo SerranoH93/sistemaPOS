@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Icon } from "../atoms/Icon";
+
 export function Btn1({
     funcion,
     title,

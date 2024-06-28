@@ -7,6 +7,7 @@ export function InputText2({ children }) {
         </Container>
     );
 }
+
 const Container = styled.div`
     position: relative;
     display: flex;

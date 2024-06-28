@@ -18,6 +18,7 @@ export function SearchBar({ setBuscador }) {
         </Container>
     );
 }
+
 const Container = styled.div`
     display: flex;    
     align-items: center;

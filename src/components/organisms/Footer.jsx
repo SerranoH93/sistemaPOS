@@ -21,6 +21,7 @@ export function Footer() {
         </Container>
     );
 }
+
 const Container = styled.div`
     display: flex;
     flex-direction: column;
