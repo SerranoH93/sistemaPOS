@@ -13,4 +13,3 @@ export const useAuthStore = create((set) => ({
         await supabase.auth.signOut();
     }
 }))
-
