@@ -126,8 +126,8 @@ export async function EditarCategorias(p, fileOld, fileNew) {
 }
 
 export async function EditarIconoStorage(id, file) {
-    const ruta = "categorias/" + p.id;
-    await supabase.storage.from("imagenes").update(ruta, fiel, {
+    const ruta = "categorias/" + id;
+    await supabase.storage.from("imagenes").update(ruta, file, {
         cacheControl: '0',
         upsert: true
     })
