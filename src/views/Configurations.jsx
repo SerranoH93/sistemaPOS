@@ -5,7 +5,10 @@ import Spinner1 from "../components/molecules/Spinner1"
 
 export function Configurations() {
     const { mostrarModulos } = useModulosStore();
-    const { isLoading, error } = useQuery({ queryKey:'mostrar modulos', queryFn: mostrarModulos})
+    const { isLoading, error } = useQuery({ 
+        queryKey:['mostrar modulos'], 
+        queryFn: mostrarModulos
+    });
 
     if(isLoading) {
         return (<span>cargando...</span>)

@@ -63,17 +63,18 @@ async function  EditarIconoCategorias(p) {
     }
 }
 
-export async function MostrarCategorias(p){
+export async function MostrarCategorias(p) {
+    console.log(p)
     const { data } = await supabase
         .from(tabla)
         .select()
-        .eq('id_empresa', p.id_empresa)
-        .order('id', { ascending: false });
+        .eq("id_empresa", p.id_empresa)
+        .order("id", { ascending: false });
     return data;
 }
 
 export async function BuscarCategorias (p) {
-    const {data} = supabase
+    const {data} = await supabase
         .from(tabla)
         .select
         .eq("id_empresa", p.id_empresa)
@@ -99,7 +100,7 @@ export async function EliminarCategorias (p) {
 }
 
 export async function EditarCategorias(p, fileOld, fileNew) {
-    const {error} = await supabase.rpc("editarCategorias", p);
+    const {error} = await supabase.rpc("editarcategorias", p);
 
     if (error) {
         Swal.fire({

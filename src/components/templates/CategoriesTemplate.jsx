@@ -3,9 +3,13 @@ import { Title } from "../atoms/Title";
 import { Btn1 } from "../molecules/Btn1";
 import { v } from "../../styles/variables";
 import { SearchBar } from "../organisms/SearchBar";
+import { useCategoriasStore } from "../../store/CategoriasStore";
+import { TablaCategorias } from "../organisms/tablas/TablaCategorias";
 
 
 export function CategoriesTemplate() {
+    const { datacategorias } = useCategoriasStore();
+
     return (        
         <Container>
             <section className="area1">
@@ -21,7 +25,7 @@ export function CategoriesTemplate() {
             </section>
 
             <section className="main">
-                <h1>main</h1>
+                <TablaCategorias data={datacategorias}/>
             </section>
         </Container>
     );
