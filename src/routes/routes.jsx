@@ -15,11 +15,16 @@ function MyRoutes() {
     const { user } = UserAuth();
     const { dataUsuarios, mostrarusuarios} = useUsuariosStore();
     const { mostrarempresa, dataempresa } = useEmpresaStore()
-    const { isLoading, error } = useQuery({ queryKey: "mostrar usuarios", queryFn: mostrarusuarios});
-    const {} = useQuery({
+    const { isLoading, error } = useQuery({ 
+        queryKey: "mostrar usuarios", 
+        queryFn: mostrarusuarios,
+        refetchOnWindowFocus: false
+    });
+    const { data: dtempresa } = useQuery({
         queryKey: ["mostrar empresa", dataUsuarios?.id], 
         queryFn: () => mostrarempresa({ _id_usuario: dataUsuarios?.id }),
-        enable: !!dataUsuarios
+        enable: !!dataUsuarios,
+        refetchOnWindowFocus: false
     });
 
     if(isLoading) {

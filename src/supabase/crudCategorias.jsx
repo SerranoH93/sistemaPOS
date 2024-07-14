@@ -74,16 +74,16 @@ export async function MostrarCategorias(p) {
 }
 
 export async function BuscarCategorias (p) {
-    const {data} = await supabase
+    const { data } = await supabase
         .from(tabla)
-        .select
+        .select()
         .eq("id_empresa", p.id_empresa)
         .ilike("nombre", "%" + p.descripcion + "%");
     return data;
 }
 
 export async function EliminarCategorias (p) {
-    const {error} = await supabase.from(tabla).delete.eq("id", p.id);
+    const {error} = await supabase.from(tabla).delete().eq("id", p.id);
     if (error) {
         Swal.fire({
             icon: "error",

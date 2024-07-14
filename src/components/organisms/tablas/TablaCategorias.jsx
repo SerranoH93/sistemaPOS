@@ -91,17 +91,6 @@ export function TablaCategorias({
             },
         },
         {
-            accessorKey: "id",
-            header: "Id",
-            cell: (info) => <span>{info.getValue()}</span>,
-            enableColumnFilter: true,
-            filterFn: (row, columnId, filterStatuses) => {
-                if (filterStatuses.length === 0) return true;
-                const status = row.getValue(columnId);
-                return filterStatuses.includes(status?.id);
-            },
-        },
-        {
             accessorKey: "nombre",
             header: "Descripcion",
             cell: (info) => <span>{info.getValue()}</span>,
@@ -112,7 +101,6 @@ export function TablaCategorias({
                 return filterStatuses.includes(status?.id);
             },
         },
-
         {
             accessorKey: "color",
             header: "Color",
@@ -339,7 +327,7 @@ const Container = styled.div`
         }
         &:nth-of-type(even) {
           @media (min-width: ${v.bpbart}) {
-           
+          
           }
         }
       }
