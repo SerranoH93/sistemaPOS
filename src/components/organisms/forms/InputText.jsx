@@ -94,6 +94,5 @@ const Container = styled.div`
   .form__field:required,
   .form__field:invalid {
     box-shadow: none;
-  }
- 
+  } 
 `;
